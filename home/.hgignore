@@ -1,0 +1,44 @@
+syntax: glob
+*.bak
+*.orig
+*.reg
+*.ign
+.DS_Store
+# temporary files
+*~
+*.swp
+# C/C++, etc
+*.o
+# build directories
+build/*
+# Python
+*.pyc
+*.pyo
+# LaTeX
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+*.thm
+*.nav
+*.snm
+*.ps
+*.pdf # YOU WILL HAVE TO ADD THESE MANUALLY
