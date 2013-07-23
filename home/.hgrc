@@ -1,2 +1,5 @@
 [ui]
 username = Michael Jordan Stanway <m.j.stanway@alum.mit.edu>
+
+[extensions]
+hgext.convert=
