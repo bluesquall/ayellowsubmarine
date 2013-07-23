@@ -14,3 +14,7 @@ alias listen="nc -luvvn "   # listen on udp port using netcat
 # prompt strings
 alias ps1_short="PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
 alias ps1_long="PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
+
+# MATLAB-lite (R2013a-compatible)
+alias matlite="matlab -nosplash -nodesktop -noFigureWindows "
+alias matfig="matlab -nosplash -nodesktop "
