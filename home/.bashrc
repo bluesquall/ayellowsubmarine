@@ -105,3 +105,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# add bashrc for OpenFoam
+# (change this if/when I move to freefoam)
+# source /opt/openfoam211/etc/bashrc
+
+# other environment variables (is there a place I should put this that is portable to other shells?)
+export GREP_OPTIONS='--exclude-dir=.svn --exclude-dir=.git --exclude=*~ --exclude=*.swp --recursive --color --line-number'
