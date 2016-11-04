@@ -172,7 +172,7 @@ bar {
 }
 
 # set wallpaper
-exec --no-startup-id /usr/bin/feh --bg-fill '/home/squall/.config/wallpaper/current.jpg'
+exec --no-startup-id /usr/bin/feh --bg-fill '/home/squall/.wallpaper/current.jpg'
 
 # start redshift
 exec --no-startup-id redshift
