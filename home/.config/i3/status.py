@@ -10,6 +10,7 @@ st = Status()
 st.register('clock', format=('%Y-%m-%d %H:%M:%S'))
 
 st.register("battery",
+    not_present_text="",
     #format="{status} {consumption:.1f}W {percentage:.0f}% [{percentage_design:.0f}%] {remaining:%E%hh:%Mm}",
     format="{status} {consumption:4.1f}W {remaining:%E%h:%M} {percentage:.0f}%",
     alert=False, #TODO# Enable later. alert_percentage=5,
@@ -18,7 +19,10 @@ st.register("battery",
 #    status={"DIS": "⇂", "CHR": "↿", "FULL": "⥮",},
 )
 
-st.register('backlight', backlight='intel_backlight', format='☀{percentage:3.0f}%') #TODO# make portable
+try:
+    st.register('backlight', backlight='intel_backlight', format='☀{percentage:3.0f}%') #TODO# make portable
+except FileNotFoundError: # there is no intel_backlight
+    pass
 
 # Note: requires both netifaces and basiciw (for essid and quality)
 wl = next((i for i in netifaces.interfaces() if i.startswith('wl')), None)
