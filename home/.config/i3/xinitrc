@@ -59,8 +59,11 @@ else
 fi
 
 compton -CGb
-# sh ~/.fehbg &
 export TERMINAL=termite
+
+# disable the x screensaver
+xset x off
+# note: to disable DPMS, use "xset -dpms"
 
 # start the ssh-agent so I don't need to enter in a passphrase every time
 eval $(ssh-agent)
