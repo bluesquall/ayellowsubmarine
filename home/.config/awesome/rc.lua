@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Vicious widgets
+-- vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -42,7 +44,8 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
-editor = os.getenv("EDITOR") or "nano"
+-- editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -111,6 +114,21 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+-- Create a battery status widget
+--[[
+-- mybatbar = awful.widget.progressbar()
+-- mybatbar:set_width(8)
+-- mybatbar:set_height(14)
+-- mybatbar:set_vertical(True)
+-- mybatbar.set_background_color(nil)
+-- mybatbar.set_border_color(nil)
+-- mybatbar.set_background_color( "#00bfff" )
+-- vicious.register(mybatbar, vicious.widgets.bat, "$2", 120, "BAT1")
+--]]
+--batstat = awful.widget({type = "textbox"})
+-- batstat = wibox.widget.textbox()
+-- vicious.register(batstat, vicious.widgets.bat, "$2", 120, "BAT1")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -193,6 +211,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
+    -- right_layout:add(batstat)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
