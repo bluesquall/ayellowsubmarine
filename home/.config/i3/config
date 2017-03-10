@@ -157,7 +157,7 @@ bindsym XF86MonBrightnessDown exec xbacklight - 5
 bindsym XF86MonBrightnessUp exec xbacklight + 5
 
 # shortcut for browser
-bindsym $mod+a exec chromium
+bindsym $mod+a exec google-chrome-stable
 bindsym $mod+b exec chromium
 
 # shortcut for GoldenCheetah
