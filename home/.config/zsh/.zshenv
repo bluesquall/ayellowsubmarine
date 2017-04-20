@@ -10,3 +10,5 @@ typeset -U path
 path+=("$(ruby -e 'print Gem.user_dir')/bin")
 
 export PATH
+
+export PASSWORD_STORE_CHARACTER_SET="[:alnum:] %&_?#=-"
