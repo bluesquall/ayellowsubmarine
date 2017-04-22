@@ -46,10 +46,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -70,13 +70,13 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -151,6 +151,55 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# mouse like vim
+mode "mouse" {
+
+    set $slow 1
+    set $quick 10
+    set $fast 50
+
+    bindsym h exec xdotool mousemove_relative -- -$quick 0
+    bindsym j exec xdotool mousemove_relative 0 $quick
+    bindsym k exec xdotool mousemove_relative -- 0 -$quick
+    bindsym l exec xdotool mousemove_relative $quick 0
+
+    bindsym space exec xdotool click 1
+    bindsym ' exec xdotool click 2
+    bindsym Return exec xdotool click 3
+
+    # two exits
+    bindsym Escape mode "default"
+    bindsym $mod+semicolon mode "default"
+}
+bindsym $mod+semicolon mode "mouse"
+
+# mouse like wasd
+mode "wasd" {
+
+    set $slow 1
+    set $quick 10
+    set $fast 50
+
+    bindsym a exec xdotool mousemove_relative -- -$quick 0
+    bindsym s exec xdotool mousemove_relative 0 $quick
+    bindsym w exec xdotool mousemove_relative -- 0 -$quick
+    bindsym d exec xdotool mousemove_relative $quick 0
+    #TODO: add in diagonals
+
+    bindsym space exec xdotool click 1
+    bindsym ' exec xdotool click 2
+    bindsym Return exec xdotool click 3
+
+    # two exits
+    bindsym Tab mode "default"
+    bindsym $mod+f mode "default"
+}
+bindsym $mod+f mode "wasd"
+
+
+
+
 
 # brightness control (Alt + F11 or Alt + F12)
 bindsym XF86MonBrightnessDown exec xbacklight - 5
