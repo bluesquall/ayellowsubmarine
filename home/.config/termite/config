@@ -1,0 +1,8 @@
+[options]
+font = Monospace 16
+font = Noto Mono 16
+font = Noto Mono 24
+# font = Noto Mono 32
+
+[colors]
+background = rgba(127, 63, 63, 0.8)
